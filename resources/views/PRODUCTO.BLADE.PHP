@@ -82,13 +82,8 @@
         <a href="#">Opción 2</a>
         <a href="#">Opción 3</a>
         <a href="#">Opción 4</a>
-        <a href="#">Opción 5</a>
-        <a href="#">Opción 6</a>
-        <a href="#">Opción 7</a>
-        <a href="#">Opción 8</a>
-        <a href="#">Opción 9</a>
-        <a href="#">Opción 10</a>
-        <a href="http://localhost/intento2/public/#">Volver a la página principal</a>
+
+        <a href="http://localhost/ENTREGABLE1/public/#">Volver a la página principal</a>
     </div>
 <body>
     <div class="container">

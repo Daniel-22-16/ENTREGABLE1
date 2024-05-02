@@ -21,13 +21,14 @@
     background-color: #fff; /* Color de fondo de respaldo */
 }
 
-        header {
+header {
     background-color: #333;
     color: #fff;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Agrega posición relativa al encabezado */
 }
 
 /* Estilo para el contenedor del logo */
@@ -36,13 +37,17 @@
 }
 
 /* Estilo para la barra de búsqueda */
-.search--search--C_fO_MU {
+.search-container {
     display: flex;
     align-items: center;
 }
 
 .search--keyword--15P08Ji {
     margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
 }
 
 .search--submit--2VTbd-T {
@@ -51,6 +56,7 @@
     color: #fff;
     cursor: pointer;
 }
+
 .search-container:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -58,7 +64,13 @@
 /* Estilo para la barra de navegación */
 .navbar {
     display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
     align-items: center;
+    padding: 60px; /* Ajusta el espacio alrededor de los elementos */
+    position: absolute; /* Agrega posición absoluta */
+    top: 50%; /* Coloca la barra de navegación en el centro vertical */
+    transform: translateY(-50%); /* Ajusta la posición vertical */
+    right: 300px; /* Ajusta la posición horizontal */
 }
 
 .navbar ul {
@@ -170,6 +182,35 @@ h3 {
             font-family: 'Verdana', sans-serif;
             font-size: 14px;
         }
+
+        .search-container {
+    display: flex;
+    align-items: center;
+    border-radius: 25px; /* Hace que los bordes del contenedor sean redondeados */
+    padding: 10px; /* Ajusta el espacio alrededor de los elementos */
+    width: 300px; /* Ajusta la anchura del contenedor */
+    background-color: #333; /* Color de fondo del contenedor */
+}
+
+.search--keyword--15P08Ji {
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Hace que los bordes del campo de búsqueda sean redondeados */
+    width: 100%; /* Ajusta el campo de búsqueda para que ocupe todo el ancho disponible */
+}
+
+.search--submit--2VTbd-T {
+    background-color: transparent;
+    border: none;
+    color: #fff; /* Cambia el color del icono de búsqueda */
+    cursor: pointer;
+}
+
+.search-container:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
     </style>
 </head>
 <body>
@@ -179,23 +220,22 @@ h3 {
             <h1>DaniExpress</h1>
         </div>
         <nav class="navbar">
-        <ul>
-            <li><a href="http://localhost/intento2/public/Registro">Registrarse</a></li>
-            <li><a href="http://localhost/intento2/public/Producto">Ver Productos</a></li>
-            <li><a href="#">Cambiar Idioma</a></li>
-            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-        </ul>
-    </nav>
-</header>
-        <div class="search-container">
-            <div class="search--search--C_fO_MU">
-                <input class="search--keyword--15P08Ji" type="text" placeholder="Buscar productos..." autocomplete="off" maxlength="50" id="search-words" value="">
-                <button class="search--submit--2VTbd-T" type="button">
-                    <i class="fas fa-search"></i> <!-- Icono de búsqueda -->
-                </button>
-            </div>
-        </div>
+    <div class="search-container">
+        <input class="search--keyword--15P08Ji" type="text" placeholder="Buscar productos..." autocomplete="off" maxlength="50" id="search-words" value="">
+        <button class="search--submit--2VTbd-T" type="button">
+            <i class="fas fa-search"></i> <!-- Icono de búsqueda -->
+        </button>
     </div>
+    <ul>
+        <li><a href="http://localhost/ENTREGABLE1/public/Registro">Registrarse</a></li>
+        <li><a href="http://localhost/ENTREGABLE1/public/Producto">Ver Productos</a></li>
+        <li><a href="#">Cambiar Idioma</a></li>
+        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+    </ul>
+</nav>
+</header>
+        
+    
 </header>
 
     

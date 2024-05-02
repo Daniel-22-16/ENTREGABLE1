@@ -10,14 +10,14 @@
     <style>
         /* Estilo CSS para el formulario */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-        }
+    font-family: Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.5); /* Negro con una opacidad del 50% */
+    margin: 0;
+    padding: 0;
+}
 
         .container {
-            max-width: 500px;
+            max-width: 300px;
             margin: 50px auto;
             background-color: #fff;
             padding: 20px;
@@ -31,32 +31,33 @@
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .form-group label {
             font-weight: bold;
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
 
         .form-group input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+            width: calc(100% - 20px); /* Resta 20px del ancho total para compensar el padding */
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
         }
 
         .form-group button {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            width: 30%;
-        }
+    display: inline-block; /* Hace que el botón se vea en una sola línea */
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto; /* Elimina la anchura fija para que el botón se ajuste al contenido */
+}
 
         .form-group button:hover {
             background-color: #555;
@@ -112,8 +113,19 @@
         .toggle-form button:hover {
             background-color: #0056b3;
         }
+
+        #submit-button {
+    margin: 0 auto; /* Empuja el botón hacia la derecha */
+    display: block; /* Asegura que el botón ocupe todo el ancho disponible */
+}
     </style>
 </head>
+<body>
+<body>
+    <div class="header">
+        
+        <a href="http://localhost/ENTREGABLE1/public/#">Volver a la página principal</a>
+    </div>
 <body>
 
 <div class="container">
@@ -133,8 +145,9 @@
             <p class="error-message" id="password-error"></p>
         </div>
         <div class="form-group">
-            <button type="submit" id="submit-button">Crear Cuenta</button>
+            <button type="submit" id="submit-button">Continuar</button>
         </div>
+       
     </form>
 
     <div class="toggle-form">
