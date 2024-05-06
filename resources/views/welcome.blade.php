@@ -8,90 +8,161 @@
 
     <title>Tienda de eCommerce</title>
     <style>
+        
+         /* Aquí va todo el CSS del primer código */
+         .container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .formulario {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .productos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            animation: moverProductos 10s linear infinite;
+        }
+
+        .producto {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            overflow: hidden;
+        }
+
+        .producto img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .producto:hover img {
+            transform: scale(1.2);
+        }
+
+        .detener-animacion {
+            animation-play-state: paused !important;
+        }
+
+        .flecha {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .flecha-izquierda {
+            left: 10px;
+        }
+
+        .flecha-derecha {
+            right: 10px;
+        }
+
+        @keyframes moverProductos {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+        
         body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-image: url(''); /* Reemplaza 'url_de_la_imagen.jpg' con la URL de tu imagen de fondo */
-    background-size: cover; /* Ajusta la imagen de fondo para que cubra todo el elemento body */
-    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
-    background-attachment: fixed; /* Fija la imagen de fondo para que permanezca en su lugar mientras se desplaza la página */
-    background-position: center; /* Centra la imagen de fondo */
-    background-color: #fff; /* Color de fondo de respaldo */
-}
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-image: url('https://wallpaper.forfun.com/fetch/ee/ee356e62c87dcd8544a0ec5bbd86b15a.jpeg'); /* Reemplaza 'url_de_la_imagen.jpg' con la URL de tu imagen de fondo */
+            background-size: cover; /* Ajusta la imagen de fondo para que cubra todo el elemento body */
+            background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+            background-attachment: fixed; /* Fija la imagen de fondo para que permanezca en su lugar mientras se desplaza la página */
+            background-position: center; /* Centra la imagen de fondo */
+            background-color: #fff; /* Color de fondo de respaldo */
+        }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative; /* Agrega posición relativa al encabezado */
-}
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Agrega posición relativa al encabezado */
+        }
 
-/* Estilo para el contenedor del logo */
-.logo {
-    margin-right: auto; /* Empuja el logo hacia la izquierda */
-}
+        /* Estilo para el contenedor del logo */
+        .logo {
+            margin-right: auto; /* Empuja el logo hacia la izquierda */
+        }
 
-/* Estilo para la barra de búsqueda */
-.search-container {
-    display: flex;
-    align-items: center;
-}
+        /* Estilo para la barra de búsqueda */
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
 
-.search--keyword--15P08Ji {
-    margin-right: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 200px;
-}
+        .search--keyword--15P08Ji {
+            margin-right: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+        }
 
-.search--submit--2VTbd-T {
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-}
+        .search--submit--2VTbd-T {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
 
-.search-container:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+        .search-container:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
 
-/* Estilo para la barra de navegación */
-.navbar {
-    display: flex;
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center;
-    padding: 60px; /* Ajusta el espacio alrededor de los elementos */
-    position: absolute; /* Agrega posición absoluta */
-    top: 50%; /* Coloca la barra de navegación en el centro vertical */
-    transform: translateY(-50%); /* Ajusta la posición vertical */
-    right: 300px; /* Ajusta la posición horizontal */
-}
+        /* Estilo para la barra de navegación */
+        .navbar {
+            display: flex;
+            justify-content: center; /* Centra los elementos horizontalmente */
+            align-items: center;
+            padding: 60px; /* Ajusta el espacio alrededor de los elementos */
+            position: absolute; /* Agrega posición absoluta */
+            top: 50%; /* Coloca la barra de navegación en el centro vertical */
+            transform: translateY(-50%); /* Ajusta la posición vertical */
+            right: 300px; /* Ajusta la posición horizontal */
+        }
 
-.navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
 
-.navbar li {
-    margin-right: 10px;
-}
+        .navbar li {
+            margin-right: 10px;
+        }
 
-.navbar a {
-    color: #fff;
-    text-decoration: none;
-}
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-.navbar a:hover {
-    text-decoration: underline;
-}
+        .navbar a:hover {
+            text-decoration: underline;
+        }
 
         section {
             padding: 20px;
@@ -136,7 +207,6 @@ header {
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             height: 120px;
-            
         }
 
         footer {
@@ -147,70 +217,109 @@ header {
         }
 
         /* Estilo para h1 */
-h1 {
-    font-family: 'Arial Black', sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-    color: #fff; /* Color por defecto */
-}
-
-/* Estilo para h2 */
-h2 {
-    font-family: 'Arial Black', sans-serif;
-    font-weight: bold;
-    font-size: 15px; /* Tamaño personalizado para h2 */
-    color: #333; /* Color por defecto */
-}
-
-/* Estilo para h3 */
-h3 {
-    font-family: 'Arial Black', sans-serif;
-    font-weight: bold;
-    font-size: 24px; /* Tamaño personalizado para h3 */
-    color: #333; /* Color por defecto */
-}
-
-
-        p {
-            font-family: 'Georgia', serif;
-            font-size: 14px;
-            line-height: 1.6;
+        h1 {
+            font-family: 'Arial Black', sans-serif;
+            font-weight: bold;
+            font-size: 24px;
             color: #333;
+            margin-bottom: 20px;
         }
 
-        li {
-            font-family: 'Verdana', sans-serif;
-            font-size: 14px;
+        /* Estilo para h2 */
+        h2 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 15px;
         }
 
-        .search-container {
-    display: flex;
-    align-items: center;
-    border-radius: 25px; /* Hace que los bordes del contenedor sean redondeados */
-    padding: 10px; /* Ajusta el espacio alrededor de los elementos */
-    width: 300px; /* Ajusta la anchura del contenedor */
-    background-color: #333; /* Color de fondo del contenedor */
-}
+        /* Estilo para p */
+        p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
 
-.search--keyword--15P08Ji {
-    margin-right: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 20px; /* Hace que los bordes del campo de búsqueda sean redondeados */
-    width: 100%; /* Ajusta el campo de búsqueda para que ocupe todo el ancho disponible */
-}
+        /* Estilo para el carrusel de imágenes */
+        .slideshow-container {
+    position: relative;
+    width:  200px; /* Ancho fijo del contenedor del carrusel */
+    height: 300px; /* Altura fija del contenedor del carrusel */
+    margin: auto;
+    overflow: hidden; /* Para ocultar las partes de las imágenes que se desplazarán fuera del contenedor */
+  }
 
-.search--submit--2VTbd-T {
-    background-color: transparent;
-    border: none;
-    color: #fff; /* Cambia el color del icono de búsqueda */
+  .slides {
+    display: flex; /* Mostrar las imágenes en una fila */
+    width: 100%; /* Ajustar el ancho del contenedor de las imágenes */
+    height: 100%; /* Ajustar la altura del contenedor de las imágenes */
+    transition: transform 0.5s ease; /* Agregar transición de desplazamiento */
+  }
+
+  .slides img {
+    width: 100%; /* Ajustar el tamaño de la imagen al contenedor */
+    height: 100%; /* Ajustar el tamaño de la imagen al contenedor */
+    flex-shrink: 0; /* Evitar que las imágenes se ajusten automáticamente */
+    object-fit: cover; /* Escalar la imagen para que se ajuste al contenedor, manteniendo su relación de aspecto y recortando si es necesario */
+    border-radius: 10px; /* Borde redondeado */
+  }
+
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
-}
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    text-decoration: none;
+    border-radius: 50%;
+  }
 
-.search-container:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.6); /* Oscurecer un poco al pasar el mouse */
+  }
 
+  .prev {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+  }
+
+        /* Estilo para el texto que aparece en la parte inferior derecha */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Estilo para el título del carrusel */
+        .slide-title {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        /* Estilo para el subtítulo del carrusel */
+        .slide-caption {
+            color: #fff;
+            font-size: 16px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
     </style>
 </head>
 <body>
@@ -234,7 +343,50 @@ h3 {
     </ul>
 </nav>
 </header>
+<div class="container">
+  <button class="flecha flecha-izquierda" onclick="moverIzquierda()">&#10094;</button>
+  <button class="flecha flecha-derecha" onclick="moverDerecha()">&#10095;</button>
+  <form class="formulario" onmouseover="detenerAnimacion()" onmouseout="reanudarAnimacion()">
+    <div class="productos">
+      <div class="producto"><img src="https://img.freepik.com/foto-gratis/ilustracion-personaje-anime-lluvia_23-2151394669.jpg?size=626&ext=jpg&ga=GA1.1.672697106.1714348800&semt=ais" alt="Producto 1"></div>
+      <div class="producto"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx0WwD1cHmv5dA1ni_LOZlKxSp8XUFQGJvp5sf6zG3Y5K1Lj8rnqf8SP0fe9JfdTqd7Xg&usqp=CAU" alt="Producto 2"></div>
+      <div class="producto"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwnLAD1phNja6LZ31NA8PwkEeI17psje7geu6xTk9dVGyu94-s3j4nXsSAmhe3zdUiiLM&usqp=CAU" alt="Producto 3"></div>
+      <div class="producto"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqXTS-pPNtonga-dmHmAxAsQiGu3LTYFQX680uYxLmSSnr3MhuEXM3pStReaBQnrk5too&usqp=CAU" alt="Producto 4"></div>
+    </div>
+    <div class="productos">
+      <div class="producto"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqXTS-pPNtonga-dmHmAxAsQiGu3LTYFQX680uYxLmSSnr3MhuEXM3pStReaBQnrk5too&usqp=CAU" alt="Producto 5"></div>
+      <div class="producto"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqXTS-pPNtonga-dmHmAxAsQiGu3LTYFQX680uYxLmSSnr3MhuEXM3pStReaBQnrk5too&usqp=CAU" alt="Producto 6"></div>
+      <div class="producto"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqXTS-pPNtonga-dmHmAxAsQiGu3LTYFQX680uYxLmSSnr3MhuEXM3pStReaBQnrk5too&usqp=CAU" alt="Producto 7"></div>
+      <div class="producto"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqXTS-pPNtonga-dmHmAxAsQiGu3LTYFQX680uYxLmSSnr3MhuEXM3pStReaBQnrk5too&usqp=CAU" alt="Producto 8"></div>
+    </div>
+  </form>
+</div>
+
         
+<!-- Carrusel de imágenes -->
+
+
+    <!-- Botones de navegación -->
+    <div class="slideshow-container">
+  <div class="slides">
+    <img src="https://i.pinimg.com/736x/fe/fa/de/fefade746a896accf6beb5dffd52901b.jpg" alt="Imagen 1">
+    <img src="https://i.pinimg.com/originals/fa/23/fe/fa23fe503e969bd91423bf368a5fc958.jpg" alt="Imagen 2">
+    <img src="https://i.pinimg.com/736x/00/f3/8b/00f38b00c8e074a5103f8135807d4cbf.jpg" alt="Imagen 3">
+    <img src="https://img.freepik.com/foto-gratis/ilustracion-personaje-anime-lluvia_23-2151394669.jpg?size=626&ext=jpg&ga=GA1.1.672697106.1714348800&semt=ais" alt="Imagen 2">
+    <img src="https://images8.alphacoders.com/133/1331368.png" alt="Imagen 2">
+    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhoRQHzPoS5coajfpSgwt8GSCGIeArKNSMOX5I5XzVLGiHqQ4aMzWYWorGZAjM2EiSa_TmXHmBYod1mU55tImCJZwkIj16g6ZANaOXa7euoGcFSDbywxif1cdMWjfGg4TlONz6GYR-J2ZUbq8WD6mzwX-eCIuVT2NNcGK_PjDtA0zCtzdmQAvqLmOqMgci-=s1600-rw" alt="Imagen 2">
+  </div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- Puntos indicadores del carrusel -->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
     
 </header>
 
@@ -251,7 +403,7 @@ h3 {
                 <img src="https://compusystemperu.com/wp-content/uploads/2021/10/X515E-I5-1.jpg" alt="Producto 1" width="100" height="100">
                 <h3>Laptop Asus</h3>
                 <p>Descripción del Producto 1</p>
-                <p>Precio: $XX.XX</p>
+                <p>Precio: $999.9</p>
                 <button>Agregar al Carrito</button>
             </div>
             
@@ -259,7 +411,7 @@ h3 {
                 <img src="https://img.fruugo.com/product/6/74/640042746_max.jpg" alt="Producto 2" width="100" height="100">
                 <h3>Gorro de Marcada</h3>
                 <p>Descripción del Producto 2</p>
-                <p>Precio: $XX.XX</p>
+                <p>Precio: $5.99</p>
                 <button>Agregar al Carrito</button>
             </div>
             
@@ -267,7 +419,7 @@ h3 {
                 <img src="https://m.media-amazon.com/images/I/71NkhJAFXvL._AC_UF894,1000_QL80_DpWeblab_.jpg" alt="Producto 3" width="100" height="100">
                 <h3>Auriculares Inalambricos</h3>
                 <p>Descripción del Producto 3</p>
-                <p>Precio: $XX.XX</p>
+                <p>Precio: $3.99</p>
                 <button>Agregar al Carrito</button>
             </div>
 
@@ -516,6 +668,50 @@ h3 {
     <footer>
         <p>Derechos de autor &copy; 2024 - Tienda de eCommerce</p>
     </footer>
+
+    <!-- Script para el carrusel de imágenes -->
+    <script>
+  let slideIndex = 0;
+  let isPaused = false;
+
+  showSlides();
+
+  function showSlides() {
+    if (!isPaused) {
+      const slides = document.querySelector('.slides');
+      const slideWidth = slides.firstElementChild.clientWidth;
+      slideIndex++;
+      slides.style.transition = 'transform 0.5s ease';
+      slides.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+      if (slideIndex >= slides.children.length) {
+        slideIndex = 0;
+        setTimeout(() => {
+          slides.style.transition = 'none';
+          slides.style.transform = `translateX(0)`;
+        }, 0);
+      }
+    }
+    setTimeout(showSlides, 5000);
+  }
+
+  function plusSlides(n) {
+    isPaused = true;
+    slideIndex += n;
+    const slides = document.querySelector('.slides');
+    const slideWidth = slides.firstElementChild.clientWidth;
+    slides.style.transition = 'transform 0.5s ease';
+    slides.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+    if (slideIndex >= slides.children.length || slideIndex < 0) {
+      slideIndex = 0;
+      setTimeout(() => {
+        slides.style.transition = 'none';
+        slides.style.transform = `translateX(0)`;
+      }, 0);
+    }
+    setTimeout(() => { isPaused = false; }, 1000);
+  }
+</script>
+
    
 </body>
 </html>
