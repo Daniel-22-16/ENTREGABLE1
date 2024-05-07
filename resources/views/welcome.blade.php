@@ -712,6 +712,38 @@
   }
 </script>
 
+<script>
+  function detenerAnimacion() {
+    var productos = document.querySelectorAll('.productos');
+    productos.forEach(function(producto) {
+      producto.classList.add('detener-animacion');
+    });
+  }
+
+  function reanudarAnimacion() {
+    var productos = document.querySelectorAll('.productos');
+    productos.forEach(function(producto) {
+      producto.classList.remove('detener-animacion');
+    });
+  }
+
+  function moverIzquierda() {
+    var productos = document.querySelectorAll('.productos');
+    productos.forEach(function(producto) {
+      producto.style.animationDirection = 'reverse';
+    });
+    productos[0].classList.remove('detener-animacion');
+  }
+
+  function moverDerecha() {
+    var productos = document.querySelectorAll('.productos');
+    productos.forEach(function(producto) {
+      producto.style.animationDirection = 'normal';
+    });
+    productos[0].classList.remove('detener-animacion');
+  }
+</script>
+
    
 </body>
 </html>
