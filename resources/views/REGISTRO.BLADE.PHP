@@ -17,6 +17,19 @@
     align-items: center;
     min-height: 100vh;
   }
+
+  .background-container {
+    position: fixed; /* Para que el fondo ocupe toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Para que esté detrás de los demás elementos */
+    background-image: url('https://img.freepik.com/foto-gratis/pintura-lago-montana-montana-al-fondo_188544-9126.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px) brightness(0.6);
+}
   
   .container {
     max-width: 300px;
@@ -121,7 +134,7 @@
   }
 
   footer ul li a {
-    color: #666;
+    color: #fff;
     text-decoration: none;
     font-size: 12px;
   }
@@ -132,7 +145,7 @@
   }
 
   .language a {
-    color: #999;
+    color: #fff;
     text-decoration: none;
     font-size: 12px;
   }
@@ -142,12 +155,16 @@
   }
 
   .copyright p {
-    color: #999;
+    color: #fff;
     font-size: 12px;
   }
 </style>
 </head>
 <body>
+
+<div class="background-container">
+    <!-- Solo la imagen de fondo va aquí -->
+</div>
 
 <div class="container">
   <h2>DANIEXPRESS</h2>
