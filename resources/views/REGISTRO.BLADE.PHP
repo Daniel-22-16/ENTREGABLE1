@@ -1,230 +1,150 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Brush+Script+MT&display=swap" rel="stylesheet">
-
-<title>Inicio de Sesión - Instagram</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 50px 0; /* Agrega espacio arriba y abajo */
-    background-color: #fafafa;
-    display: flex;
-    flex-direction: column; /* Organizar contenido verticalmente */
-    align-items: center;
-    min-height: 100vh;
-  }
-
-  .background-container {
-    position: fixed; /* Para que el fondo ocupe toda la pantalla */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Para que esté detrás de los demás elementos */
-    background-image: url('https://img.freepik.com/foto-gratis/pintura-lago-montana-montana-al-fondo_188544-9126.jpg');
-    background-size: cover;
-    background-position: center;
-    filter: blur(5px) brightness(0.6);
-}
-  
-  .container {
-    max-width: 300px;
-    margin: auto;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  .container h2 {
-    font-family: 'Comic Sans MS', cursive; /* Aplica la fuente Comic Sans MS */
-    font-size: 30px;
-    font-style: italic; /* Estilo cursiva */
-    text-align: center;
-    margin-bottom: 30px;
-    transform: skewX(-15deg); /* Inclina el texto */
-  }
-  
-  input[type="text"],
-  input[type="password"],
-  button {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 0 auto 10px; /* Centrar horizontalmente */
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-sizing: border-box;
-    margin-left: 8px; /* Agrega un pequeño margen izquierdo */
-  }
-
-  button[type="submit"] {
-    padding: 10px 20px; /* Ajusta el padding horizontal */
-    margin: 0 auto; /* Centra horizontalmente */
-    border: none;
-    border-radius: 8px;
-    background-color: #ADD8E6; /* Celeste */
-    color: #fff;
-    cursor: pointer;
-    box-sizing: border-box;
-    margin-left: 8px; /* Agrega un pequeño margen izquierdo */
-  }
-  
-  .or {
-    margin: 20px 0 ;
-    font-weight: bold;
-    color: #555;
-    text-align: center;
-  }
-  
-  .forgot-password {
-    display: block;
-    text-align: center; /* Alineación centrada */
-    font-size: 14px;
-    color: #003569;
-    text-decoration: none;
-    margin-bottom: 15px;
-  }
-  
-  .signup-link {
-    text-align: center; /* Alineación centrada */
-    margin-top: 15px;
-  }
-  
-  .signup-link span {
-    color: #999;
-  }
-  
-  .signup-link a {
-    color: #003569;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .download-app {
-    text-align: center;
-    margin-top: 15px;
-  }
-  
-  .download-app img {
-    width: 100px;
-    margin: 0 5px;
-  }
-
-  footer {
-    margin-top: 10px;
-    background-color: transparent;
-    padding: 20px;
-    text-align: center;
-  }
-
-  footer ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  footer ul li {
-    display: inline;
-    margin-right: 10px;
-  }
-
-  footer ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 12px;
-  }
-
-  .language {
-    display: block;
-    margin-top: 10px;
-  }
-
-  .language a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 12px;
-  }
-
-  .copyright {
-    margin-top: 10px;
-  }
-
-  .copyright p {
-    color: #fff;
-    font-size: 12px;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="..\resources\css\welcom.css">
+    <title>Ludiflex | Login & Registration</title>
 </head>
 <body>
+ <div class="wrapper">
+    <nav class="nav">
+        <div class="nav-logo">
+            <p>DaniExpress</p>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="#" class="link active">Home</a></li>
+                <li><a href="#" class="link">Blog</a></li>
+                <li><a href="#" class="link">Services</a></li>
+                <li><a href="#" class="link">About</a></li>
+            </ul>
+        </div>
+        <div class="nav-button">
+            <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
+            <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+        </div>
+    </nav>
 
-<div class="background-container">
-    <!-- Solo la imagen de fondo va aquí -->
-</div>
+<!----------------------------- Form box ----------------------------------->    
+    <div class="form-box">
+        
+        <!------------------- login form -------------------------->
 
-<div class="container">
-  <h2>DANIEXPRESS</h2>
-  <form id="loginForm">
-    <input type="text" placeholder="Teléfono, usuario o correo electrónico" id="username" required>
-    <input type="password" placeholder="Contraseña" id="password" required>
-    <button type="submit">Entrar</button>
-  </form>
-  <div class="or">o</div>
-  <button id="facebookLogin">Iniciar sesión con Facebook</button>
-  <a href="#" class="forgot-password">¿Has olvidado la contraseña?</a>
-  <div class="signup-link">
-    <span>¿No tienes una cuenta?</span>
-    <a href="#">Regístrate</a>
-  </div>
-  <div class="download-app">
-    <span>Descarga la aplicación.</span>
-    <div>
-      <a href="#">
-        <img src="https://static.cdninstagram.com/rsrc.php/v3/yd/r/xOhODS7viZl.png" alt="Google Play">
-      </a>
-      <a href="#">
-        <img src="https://static.cdninstagram.com/rsrc.php/v3/y9/r/LjIQEL8csb0.png" alt="Microsoft Store">
-      </a>
+        <div class="login-container" id="login">
+            <div class="top">
+                <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
+                <header>Login</header>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" placeholder="Username or Email">
+                <i class="bx bx-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" placeholder="Password">
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="submit" class="submit" value="Sign In">
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="login-check">
+                    <label for="login-check"> Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Forgot password?</a></label>
+                </div>
+            </div>
+        </div>
+
+        <!------------------- registration form -------------------------->
+        <div class="register-container" id="register">
+            <div class="top">
+                <span>Have an account? <a href="#" onclick="login()">Login</a></span>
+                <header>Sign Up</header>
+            </div>
+            <div class="two-forms">
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Firstname">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Lastname">
+                    <i class="bx bx-user"></i>
+                </div>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" placeholder="Email">
+                <i class="bx bx-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" placeholder="Password">
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="submit" class="submit" value="Register">
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="register-check">
+                    <label for="register-check"> Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Terms & conditions</a></label>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+</div>   
 
-<footer>
-  <ul>
-    <li><a href="#">Meta</a></li>
-    <li><a href="#">Información</a></li>
-    <li><a href="#">Blog</a></li>
-    <li><a href="#">Empleo</a></li>
-    <li><a href="#">Ayuda</a></li>
-    <li><a href="#">API</a></li>
-    <li><a href="#">Privacidad</a></li>
-    <li><a href="#">Configuración de cookies</a></li>
-    <li><a href="#">Condiciones</a></li>
-    <li><a href="#">Ubicaciones</a></li>
-    <li><a href="#">Instagram Lite</a></li>
-    <li><a href="#">Threads</a></li>
-    <li><a href="#">Subir contactos y personas no usuarias</a></li>
-    <li><a href="#">Meta Verified</a></li>
-  </ul>
-  <div class="language">
-    <a href="#">Español (España)</a>
-  </div>
-  <div class="copyright">
-    <p>© 2024 Instagram from Meta</p>
-  </div>
-</footer>
 
 <script>
-  document.getElementById("facebookLogin").addEventListener("click", function() {
-    // Aquí puedes agregar la lógica para el inicio de sesión con Facebook
-    alert("Iniciando sesión con Facebook...");
-  });
+   
+   function myMenuFunction() {
+    var i = document.getElementById("navMenu");
+
+    if(i.className === "nav-menu") {
+        i.className += " responsive";
+    } else {
+        i.className = "nav-menu";
+    }
+   }
+ 
 </script>
 
+<script>
+
+    var a = document.getElementById("loginBtn");
+    var b = document.getElementById("registerBtn");
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+
+    function login() {
+        x.style.left = "4px";
+        y.style.right = "-520px";
+        a.className += " white-btn";
+        b.className = "btn";
+        x.style.opacity = 1;
+        y.style.opacity = 0;
+    }
+
+    function register() {
+        x.style.left = "-510px";
+        y.style.right = "5px";
+        a.className = "btn";
+        b.className += " white-btn";
+        x.style.opacity = 0;
+        y.style.opacity = 1;
+    }
+
+</script>
 
 </body>
 </html>
